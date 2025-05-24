@@ -1,0 +1,1717 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <title>Airbnb Clone</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid mx-5">
+
+            <a class="navbar-brand" href="#">
+                <img src="./images/airbnb-logo.webp" alt="Airbnb Logo" style="height: 300px; width: 300px;"
+                    class="img-fluid">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item d-flex align-items-center me-3">
+                        <a href="#" class="d-flex align-items-center text-decoration-none active">
+                            <img src="./images/Screenshot 2025-05-23 005808.png" alt="Homes Icon" class="me-2 nav-img"
+                                style="height: 55px; width: 65px;" />
+                            <span class="nav-link nav-text" style="font-size: 18px; color:#000">Homes</span>
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center me-3">
+                        <a href="#" class="d-flex align-items-center text-decoration-none">
+                            <img src="./images/exp.png" alt="Features Icon" class="me-2 nav-img"
+                                style="height: 55px; width: 65px;" />
+                            <span class="nav-link nav-text" style="font-size: 18px;">Features</span>
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center me-3">
+                        <a href="#" class="d-flex align-items-center text-decoration-none">
+                            <img src="./images/services.png" alt="Pricing Icon" class="me-2 nav-img"
+                                style="height: 55px; width: 65px;" />
+                            <span class="nav-link nav-text" style="font-size: 18px;">Pricing</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="d-none d-md-flex align-items-center gap-3">
+                <button type="button" class="btn btn-light px-1 py-2">
+                    Become a host
+                </button>
+
+                <button type="button" class="btn btn-light p-1 d-flex align-items-center">
+                    <img src="./images/geo.png" alt="Geo Icon" style="height: 20px; width: 22px;">
+                </button>
+
+                <button type="button" class="btn btn-light pb-1">
+                    <i class="fa-solid fa-bars fs-5"></i>
+                </button>
+            </div>
+
+
+
+        </div>
+    </nav>
+
+    <section class="d-none d-md-flex">
+        <div class="container d-flex align-items-center p-1"
+            style="border: 1px solid #ccc; border-radius: 50px; width: 50%;">
+
+            <div class="d-flex gap-2 w-100">
+                <div class="btn-group w-100 d-flex align-items-center" role="group">
+
+                    <!-- Where -->
+                    <div class="btn btn-light rounded-pill flex-grow-1 hover-rounded text-start px-3 py-2">
+                        <label for="where" class="form-label mb-1 fw-semibold">Where</label>
+                        <input id="where" type="text" class="form-control border-0 p-0 m-0 text-muted"
+                            placeholder="Search destinations" style="background: transparent; box-shadow: none;">
+                    </div>
+
+                    <!-- Vertical Line -->
+                    <div class="vr"
+                        style="height: 60px; width: 1px; background-color: black; align-self: stretch; margin: 5px 10px;">
+                    </div>
+
+                    <!-- Check In -->
+                    <div class="btn btn-light rounded-pill flex-grow-1 hover-rounded text-start px-3 py-2">
+                        <label for="checkin" class="form-label mb-1 fw-semibold">Check in</label>
+                        <input id="checkin" type="date" class="form-control border-0 p-0 m-0 text-muted"
+                            placeholder="Add dates" style="background: transparent; box-shadow: none;">
+                    </div>
+
+                    <!-- Vertical Line -->
+                    <div class="vr"
+                        style="height: 60px; width: 1px; background-color: black; align-self: stretch; margin: 5px 10px;">
+                    </div>
+
+                    <!-- Check Out -->
+                    <div class="btn btn-light rounded-pill flex-grow-1 hover-rounded text-start px-3 py-2">
+                        <label for="checkout" class="form-label mb-1 fw-semibold">Check out</label>
+                        <input id="checkout" type="date" class="form-control border-0 p-0 m-0 text-muted"
+                            placeholder="Add dates" style="background: transparent; box-shadow: none;">
+                    </div>
+
+                    <!-- Vertical Line -->
+                    <div class="vr"
+                        style="height: 60px; width: 1px; background-color: black; align-self: stretch; margin: 5px 10px;">
+                    </div>
+
+                    <!-- Guests -->
+                    <div class="btn btn-light rounded-pill flex-grow-1 hover-rounded text-start px-3 py-2">
+                        <label for="guests" class="form-label mb-1 fw-semibold">Who</label>
+                        <input id="guests" type="text" class="form-control border-0 p-0 m-0 text-muted"
+                            placeholder="Add guests" min="1" style="background: transparent; box-shadow: none;">
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Search Button -->
+            <button type="button" class="btn btn-danger rounded-circle d-flex align-items-center justify-content-center"
+                style="width: 50px; height: 45px; padding: 0;">
+                <i class="fas fa-search text-white"></i>
+            </button>
+
+        </div>
+    </section>
+
+    <!-- card section - 1  -->
+    <section>
+        <div class="container-fluid mt-5" style="max-width: 1200px; margin-left:auto; margin-right:auto">
+            <h2>Popular homes in Pune ></h2>
+            <div class="row row-cols-2 row-cols-md-5 g-3 mt-3">
+                <div class="col">
+                    <!--Bootstrap Icons -->
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+                        rel="stylesheet">
+
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <h6 class="card-title text-start fs-6">Flat in Gahunje</h6>
+                            <p class="card-text">₹5,692 for 2 nights</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title text-start fs-6">Flat in Pune</h6>
+                            <p class="card-text">₹4,793 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title text-start fs-6">Flat in Pune</h6>
+                            <p class="card-text">₹4,108 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title text-start fs-6">Guest suite in Pune</h6>
+                            <p class="card-text">₹4,645 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title text-start fs-6">Flat in Gahunje</h6>
+                            <p class="card-text">₹5,236 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- card section - 2  -->
+    <section>
+        <div class="container-fluid mt-5" style="max-width: 1200px; margin-left:auto; margin-right:auto">
+            <h2>Available in South Goa next weekend ></h2>
+            <div class="row row-cols-2 row-cols-md-5 g-3 mt-3">
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title text-start fs-6">Apartment in South Goa</h6>
+                            <p class="card-text">₹4,451 for 2 nights</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title text-start fs-6">Guest house in Majorda</h6>
+                            <p class="card-text">₹7,075 for 2 nights</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title text-start fs-6">Flat in Benaulim</h6>
+                            <p class="card-text">₹6,105 for 2 nights</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title text-start fs-6">Flat in Canacona</h6>
+                            <p class="card-text">₹5,207 for 2 nights</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title text-start fs-6">Flat in Varca</h6>
+                            <p class="card-text">₹5,249 for 2 nights</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- card section - 3  -->
+    <section>
+        <div class="container-fluid mt-5" style="max-width: 1200px; margin-left:auto; margin-right:auto">
+            <h2>Stay in North Goa ></h2>
+            <div class="row row-cols-2 row-cols-md-5 g-3 mt-3">
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title text-start fs-6">Apartment in Siolim</h6>
+                            <p class="card-text">₹5,249 for 2 nights</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title text-start fs-6">Apartment in Anjuna</h6>
+                            <p class="card-text">₹3,389 for 2 nights</p>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title text-start fs-6">Flat in Siolim</h6>
+                            <p class="card-text">₹6,850 for 2 nights</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title text-start fs-6">Apartment in Candolim</h6>
+                            <p class="card-text">₹10,499 for 2 nights</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title text-start fs-6">Apartment in Siolim</h6>
+                            <p class="card-text">₹8,787 for 2 nights</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- card section - 4  -->
+    <section>
+        <div class="container-fluid mt-5" style="max-width: 1200px; margin-left:auto; margin-right:auto">
+            <h2>Available in Raigad next weekend ></h2>
+            <div class="row row-cols-2 row-cols-md-5 g-3 mt-3">
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title text-start fs-6">Cottage in Vile
+                            </h6>
+                            <p class="card-text">
+                                ₹3,424 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Bungalow in Agardanda
+
+                            </h5>
+                            <p class="card-text">
+                                ₹14,379 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Apartment in Mapgaon
+
+                            </h5>
+                            <p class="card-text">
+                                ₹13,124 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Flat in Dhokshet
+                            </h5>
+                            <p class="card-text">
+                                ₹9,244 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Farm stay in Shenale
+                            </h5>
+                            <p class="card-text">
+                                ₹13,124 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- card section - 5  -->
+    <section>
+        <div class="container-fluid mt-5" style="max-width: 1200px; margin-left:auto; margin-right:auto">
+            <h2>Homes in Thane></h2>
+            <div class="row row-cols-2 row-cols-md-5 g-3 mt-3">
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Farm stay in Titwala
+                            </h5>
+                            <p class="card-text">
+                                ₹36,518 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Villa in Naldhe
+
+                            </h5>
+                            <p class="card-text text-start fs-6">
+                                ₹14,415 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Home in Mumbai
+
+                            </h5>
+                            <p class="card-text">
+                                ₹3,994 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Home in Dhamni
+                            </h5>
+                            <p class="card-text">
+                                ₹8,201 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Flat in Dombivli
+                            </h5>
+                            <p class="card-text">
+                                ₹4,165 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- card section - 6  -->
+    <section>
+        <div class="container-fluid mt-5" style="max-width: 1200px; margin-left:auto; margin-right:auto">
+            <h2>Places to stay in Dubai ></h2>
+            <div class="row row-cols-2 row-cols-md-5 g-3 mt-3">
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Guest suite in AI-Jafiliya
+                            </h5>
+                            <p class="card-text">
+                                ₹10,199 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Flat in AI-Jafiliya
+
+                            </h5>
+                            <p class="card-text">
+                                ₹8,635 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Home in AI-Quoz
+
+                            </h5>
+                            <p class="card-text">
+                                ₹8,526 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Flat in Downtown Dubai
+                            </h5>
+                            <p class="card-text">
+                                ₹14,004 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Flat in Downtown Dubai
+                            </h5>
+                            <p class="card-text">
+                                ₹19,494 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- card section - 7  -->
+    <section>
+        <div class="container-fluid mt-5" style="max-width: 1200px; margin-left:auto; margin-right:auto">
+            <h2>Check out homes in London ></h2>
+            <div class="row row-cols-2 row-cols-md-5 g-3 mt-3">
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Room in West Ham
+                            </h5>
+                            <p class="card-text">
+                                ₹6,971 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Room in Hackney
+
+                            </h5>
+                            <p class="card-text">
+                                ₹10,188 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Room in Southwark
+
+                            </h5>
+                            <p class="card-text">
+                                ₹13,406 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Room in London
+                            </h5>
+                            <p class="card-text">
+                                ₹12,869 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Room in London
+                            </h5>
+                            <p class="card-text">
+                                ₹8,983 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- card section - 8  -->
+    <section>
+        <div class="container-fluid mt-5" style="max-width: 1200px; margin-left:auto; margin-right:auto">
+            <h2>Popular homes in Satara ></h2>
+            <div class="row row-cols-2 row-cols-md-5 g-3 mt-3">
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Home in Panchgani
+                            </h5>
+                            <p class="card-text">
+                                ₹4,665 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Farm stay in Mahabaleshwar
+
+                            </h5>
+                            <p class="card-text">
+                                ₹8,582 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Farm stay in Nagewadi
+
+                            </h5>
+                            <p class="card-text">
+                                ₹2,710 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Villa in Panchgani
+                            </h5>
+                            <p class="card-text">
+                                ₹11,583 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                            style="height:200px;border-radius:10px">
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Villa in Panchgani
+                            </h5>
+                            <p class="card-text">
+                                ₹19,800 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- card section - 9  -->
+    <section>
+        <div class="container-fluid mt-5" style="max-width: 1200px; margin-left:auto; margin-right:auto">
+            <h2>Available next month in Bengaluru ></h2>
+            <div class="row row-cols-2 row-cols-md-5 g-3 mt-3">
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Home in Bengaluru
+                            </h5>
+                            <p class="card-text">
+                                ₹3,503 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Room in BTM Layout
+
+                            </h5>
+                            <p class="card-text">
+                                ₹3,880 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Flat in Bengaluru
+
+                            </h5>
+                            <p class="card-text">
+                                ₹8,016 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Flat in Bengaluru
+                            </h5>
+                            <p class="card-text">
+                                ₹11,982 for 2 nights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="position-relative">
+                            <!-- Card Image -->
+                            <img src="./images/guest -house.jpg" class="card-img-top" alt="..."
+                                style="height:200px;border-radius:10px">
+
+                            <i class="bi bi-heart-fill text-black fs-5 position-absolute top-0 end-0 m-1 pe-2 z-3"
+                                style="text-shadow: 0 0 5px white, 0 0 5px white;">
+                            </i>
+
+                            <span
+                                class="position-absolute top-0 start-0 m-2 fs-6 px-2 py-0 text-black bg-white bg-opacity-75 z-3"
+                                style="border-radius: 12px;">
+                                Guest Favourite
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-start fs-6">Flat in Bengaluru
+                            </h5>
+                            <p class="card-text">
+                                ₹2,280 for 2 nights
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="ms-5">
+        <h3 class="ms-4 mt-5">Inspiration for future getaways</h3>
+        <nav>
+            <div class="nav nav-tabs ms-2 my-4" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                    type="button" role="tab" aria-controls="nav-home" aria-selected="true">Unique stays</button>
+                <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                    type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Categories</button>
+            </div>
+        </nav>
+        <div class="tab-content ms-3" id="nav-tabContent" style="font-size: 17px;">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="container-fluid">
+                    <div class="row row-cols-3 row-cols-lg-6 g-2 g-lg-3">
+                        <div class="col">
+                            <div>
+                                <h5 style="font-size: 18px;">Yurt Rentals</h5>United States
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                                <h5 style="font-size: 18px;">Yurt Rentals</h5>United Kingdom
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                                <h5 style="font-size: 18px;">Castle Rentals</h5>United States
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                                <h5 style="font-size: 18px;">Houseboats</h5>United States
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                                <h5 style="font-size: 18px;">Holiday Caravans</h5>United Kingdom
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                                <h5 style="font-size: 18px;">Private Island Rentals</h5>United States
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                                <h5 style="font-size: 18px;">Farm Houses</h5>United States
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                                <h5 style="font-size: 18px;">Farm Cottages</h5>United Kingdom
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                                <h5 style="font-size: 18px;">Cabin Rentals</h5>Australia
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                                <h5 style="font-size: 18px;">Luxury Cabins</h5>United Kingdom
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                                <h5 style="font-size: 18px;">Luxury Cabins</h5>United States
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                                <h5 style="font-size: 18px;">Holiday Chalets</h5>United Kingdom
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                                <h5 style="font-size: 18px;">Cottage Rentals</h5>United States
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                                <h5 style="font-size: 18px;">Holiday Cottages</h5>United Kingdom
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                                <h5 style="font-size: 18px;">Mansion Rentals</h5>United States
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                                <h5 style="font-size: 18px;">Villa Rentals</h5>United Kingdom
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                                <h5 style="font-size: 18px;">Holiday Bungalows</h5>United Kingdom
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div>
+                                <h5 style="font-size: 18px;">Bungalow Rentals</h5>United States
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="col">
+                            <div class="p-3 border bg-light"><b>Condo Rentals </b> <br>
+                                United States
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3 border bg-light"><b>Holiday Apartments </b> <br>
+                                Australia
+                            </div>
+                        </div>
+                         <div class="col">
+                            <div class="p-3 border bg-light"><b>Holiday Houses </b> <br>
+                                United States
+                            </div>
+                        </div>
+                         <div class="col">
+                            <div class="p-3 border bg-light"><b>Holiday Houses </b> <br>
+                                United Kingdom
+                            </div>
+                        </div>
+                         <div class="col">
+                            <div class="p-3 border bg-light"><b>Private Holiday Rentals </b> <br>
+                                United Kingdom
+                            </div>
+                        </div>
+                         <div class="col">
+                            <div class="p-3 border bg-light"><b>Big House Rentals </b> <br>
+                                United States
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3 border bg-light"><b>Big Cottages </b> <br>
+                                Australia
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3 border bg-light"><b>Large Villas </b> <br>
+                                United Kingdom
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3 border bg-light"><b>House Rentals with a Pool </b> <br>
+                                United States
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3 border bg-light"><b>Cabin Rentals with a Pool </b> <br>
+                                United States
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3 border bg-light"><b>Villas with a Pool </b> <br>
+                                United Kingdom
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3 border bg-light"><b>Apartments with a Hot Tub </b> <br>
+                                United States
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3 border bg-light"><b>Holiday Cottages with a Hot Tub </b> <br>
+                                United Kingdom
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3 border bg-light"><b>Beach Cabins </b> <br>
+                                United States
+                            </div>
+                        </div>
+                         <div class="col">
+                            <div class="p-3 border bg-light"><b>Beach Condos </b> <br>
+                                United States
+                            </div>
+                        </div>
+                         <div class="col">
+                            <div class="p-3 border bg-light"><b>Beachfront Rentals </b> <br>
+                                United States
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3 border bg-light"><b>Beach Houses </b> <br>
+                                United Kingdom
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3 border bg-light"><b>Beach Villas </b> <br>
+                                United Kingdom
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3 border bg-light"><b>Coastal Cottages </b> <br>
+                                United Kingdom
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3 border bg-light"><b>Pet-Friendly Vacation Rentals </b> <br>
+                                United States
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3 border bg-light"><b>Pet-Friendly Beach Rentals </b> <br>
+                                United States
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3 border bg-light"><b>Pet-Friendly Cabin Rentals </b> <br>
+                                United States
+                            </div>
+                        </div>
+                         <div class="col">
+                            <div class="p-3 border bg-light"><b>Dog-Friendly Cottages </b> <br>
+                                United Kingdom
+                            </div>
+                        </div>
+                         <div class="col">
+                            <div class="p-3 border bg-light"><b>Luxury Dog-Friendly Cottages </b> <br>
+                                United Kingdom
+                            </div>
+                        </div> -->
+
+
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <div class="container-fluid">
+                    <div class="row row-cols-3 row-cols-lg-6 g-2 g-lg-3" style="font-weight: 500;">
+                        <div class="col">
+                            <div>Amazing pools</div>
+                        </div>
+                        <div class="col">
+                            <div>Arctic</div>
+                        </div>
+                        <div class="col">
+                            <div>Camping</div>
+                        </div>
+                        <div class="col">
+                            <div>Camper vans</div>
+                        </div>
+                        <div class="col">
+                            <div>Castles</div>
+                        </div>
+                        <div class="col">
+                            <div>Containers</div>
+                        </div>
+                        <div class="col">
+                            <div>Countryside</div>
+                        </div>
+                        <div class="col">
+                            <div>Design</div>
+                        </div>
+                        <div class="col">
+                            <div>Earth homes</div>
+                        </div>
+                        <div class="col">
+                            <div>Farms</div>
+                        </div>
+                        <div class="col">
+                            <div>National Parks</div>
+                        </div>
+                        <div class="col">
+                            <div>Vineyards</div>
+                        </div>
+                        <div class="col">
+                            <div>OMG!</div>
+                        </div>
+                        <div class="col">
+                            <div>Tiny homes</div>
+                        </div>
+                        <div class="col">
+                            <div>Towers</div>
+                        </div>
+                        <div class="col">
+                            <div>Windmills</div>
+                        </div>
+                        <div class="col">
+                            <div>Luxe</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid mt-5">
+                <div class="row">
+                    <!-- Support Column -->
+                    <div class="col-md-4 mt-5 mb-5">
+                        <div>
+                            <h5 class="mb-4">Support</h5>
+                            <ul class="list-unstyled footer-links">
+                                <li class="mb-3"><a href="#">Help Centre</a></li>
+                                <li class="mb-3"><a href="#">AirCover</a></li>
+                                <li class="mb-3"><a href="#">Anti-discrimination</a></li>
+                                <li class="mb-3"><a href="#">Disability support</a></li>
+                                <li class="mb-3"><a href="#">Cancellation options</a></li>
+                                <li class="mb-3"><a href="#">Report neighbourhood concern</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Hosting Column -->
+                    <div class="col-md-4 mt-5">
+                        <div>
+                            <h5 class="mb-4">Hosting</h5>
+                            <ul class="list-unstyled footer-links">
+                                <li class="mb-3"><a href="#">Airbnb your home</a></li>
+                                <li class="mb-3"><a href="#">AirCover for Hosts</a></li>
+                                <li class="mb-3"><a href="#">Hosting resources</a></li>
+                                <li class="mb-3"><a href="#">Community forum</a></li>
+                                <li class="mb-3"><a href="#">Hosting responsibly</a></li>
+                                <li class="mb-3"><a href="#">Join a free Hosting class</a></li>
+                                <li class="mb-3"><a href="#">Find a co‑host</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Airbnb Column -->
+                    <div class="col-md-4 mt-5">
+                        <div>
+                            <h5 class="mb-4">Airbnb</h5>
+                            <ul class="list-unstyled footer-links">
+                                <li class="mb-3"><a href="#">2025 Summer Release</a></li>
+                                <li class="mb-3"><a href="#">Newsroom</a></li>
+                                <li class="mb-3"><a href="#">New features</a></li>
+                                <li class="mb-3"><a href="#">Careers</a></li>
+                                <li class="mb-3"><a href="#">Investors</a></li>
+                                <li class="mb-3"><a href="#">Airbnb.org emergency stays</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="foo ms-3 mt-5 d-flex justify-content-between align-items-center flex-wrap">
+            <!-- Left Section -->
+            <div class="left-footer">
+                <p class="mb-0 footer-links">
+                    © 2025 Airbnb, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Sitemap</a> · <a
+                        href="#">Company details</a>
+                </p>
+            </div>
+
+            <!-- Right Section -->
+            <div class="right-footer d-flex align-items-center gap-3 mt-2 mt-md-0 me-5">
+                <button type="button" class="btn btn-light p-1 d-flex align-items-center">
+                    <img src="./images/geo.png" alt="Geo Icon" style="height: 20px; width: 22px;">
+                </button>
+                <span><strong class="me-3">English (IN)</strong> <b>₹ INR</b></span>
+                <a href="#" aria-label="Facebook" class="text-dark"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter" class="text-dark"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="Instagram" class="text-dark"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
