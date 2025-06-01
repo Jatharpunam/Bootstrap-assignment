@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    padding-top: 20px;
+}
+
+.custom-icon .nav-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.custom-icon .nav-link:hover {
+    background-color: rgb(192, 189, 189);
+    color: white;
+}
+
+.linear-text-gradient {
+    background: linear-gradient(to right, rgb(24, 64, 145), rgb(131, 72, 190), rgb(232, 63, 117));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.bg-gradient-custom {
+  background-image: linear-gradient(135deg, rgb(24, 64, 145), rgb(131, 72, 190), rgb(232, 63, 117));
+}
